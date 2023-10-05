@@ -13,7 +13,7 @@ export async function getTaladros(req, res) {
 
     res.status(200).json({
       Registros: result.rowsAffected[0] ,
-      Mensaje: "Taladros obtenidos"
+      Detalle: result.recordset
     })
 
   } catch (error) {
@@ -35,7 +35,7 @@ export async function getTaladro(req, res) {
     } else {
       res.status(200).json({
         Registros: result.rowsAffected[0],
-        Mensaje: "Taladro obtenido"
+        Detalle: result.recordset
       })
     }
 

@@ -1,12 +1,10 @@
-import { varEntorno } from '../config/config.js';
+import varEntorno from '../config/config.js';
 
 export function checkApiKey(req, res, next) {
   const apiKey = req.headers['api'];
-
-  // if (apiKey === varEntorno.apiKey) {
-  if (apiKey === '123') {
+  if (apiKey === varEntorno.apikey) {
     next();
   } else {
-    res.status(401).send('Unauthorized');
+    res.status(401).send('No estas autorizado');
   }
 }

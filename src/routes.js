@@ -1,10 +1,9 @@
 import Router from 'express';
 
-
 // Importar rutas
 import taladroRoutes from './dbsGeo/taladro/routes.js';
-// import taladroAvanceRoutes from "./dbsGeo/TaladroAvance.routes.js";
-// import authRoutes from "./dbsSeg/Auth.routes.js";
+import taladroAvanceRoutes from "./dbsGeo/taladroAvance/routes.js";
+import authRoutes from "./dbsSeg/usuario/routes.js";
 
 function routerApi( app ) {
   const router = Router();
@@ -15,8 +14,8 @@ function routerApi( app ) {
 
   // Rutas
   router.use('/taladro',taladroRoutes);
-  // router.use('/taladroavance',taladroAvanceRoutes);
-  // router.use('/usuario', authRoutes); 
+  router.use('/taladroavance',taladroAvanceRoutes);
+  router.use('/usuario', authRoutes); 
 
   // Crear una ruta para manejar errores
   app.use((err, req, res, next) => {
